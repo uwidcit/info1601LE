@@ -1,0 +1,25 @@
+{
+  "name": "mock",
+  "version": "1.0.0",
+  "description": "Info 1601 Lab Assessment Environment",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha && mocha >> report.txt",
+    "start": "live-server --port=8080 --cors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uwidcit/info2602mockLE.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uwidcit/info2602mockLE/issues"
+  },
+  "homepage": "https://github.com/uwidcit/info2602mockLE#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "puppeteer": "^2.1.1"
+  }
+}
