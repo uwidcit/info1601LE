@@ -1,12 +1,12 @@
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/uwidcit/info2602mockLE) 
+[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/uwidcit/info1601LE) 
 
 # Running The Application
 ```
-python3 main.py
+npm start
 ```
 
-# Initialize The Database
+# Running tests
 
 ```
-python3 initDB.py
+npm test
 ```
