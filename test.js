@@ -1,8 +1,9 @@
 const puppeteer = require('puppeteer');
 const { expect, assert }  = require('chai');
 
+//replace with the root of you server
+let URL ="http://127.0.0.1:8080";
 
-let URL ="http://127.0.0.1:8080/app";
 const HEADLESS = true;
 const TIMEOUT = 12000;
 
@@ -30,12 +31,35 @@ function checkElements(elements){
   }
 }
 
-describe('Test Suite 1: Page should have the appropriate title', ()=>{
-  it('Check for the "Document" title', async()=>{
-    expect(await page.title()).to.eql('Document');
+describe('Test Suite 1: The Pokelisting Table', ()=>{
+
+
+  checkElements({
+    'an tabulation of pigeon data of the appropriate structure': 'table>thead+tbody',
+    '5 columns': 'table>thead>tr>th:nth-child(5)',
+    '50 rows': ' table>tbody>tr:nth-child(50)'
+  })
+
+  it('Should have "Bulbasaur in first column of first row', async()=>{
+      expect(await getInnerText('tr:nth-child(1) > td:nth-child(1)')).to.eql('Bulbasaur')
+  });
+
+   it('Should have "Bulbasaur in first column of first row', async()=>{
+   expect(await getInnerText('tr:nth-child(1) > td:nth-child(2)')).to.eql('grass')
+  });
+
+    it('Should have "Bulbasaur in first column of first row', async()=>{
+   expect(await getInnerText('tr:nth-child(1) > td:nth-child(3)')).to.eql('poison')
+  });
+
+  it('Should have "Bulbasaur in first column of first row', async()=>{
+   expect(await getInnerText('tr:nth-child(1) > td:nth-child(4)')).to.eql('6.9')
+  });
+
+  it('Should have "Bulbasaur in first column of first row', async()=>{
+   expect(await getInnerText('tr:nth-child(1) > td:nth-child(5)')).to.eql('0.7')
   });
 });
-
 
 after(async () => {
   await browser.close();
