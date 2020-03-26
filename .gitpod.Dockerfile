@@ -1,7 +1,7 @@
 FROM gitpod/workspace-full
                     
 USER gitpod
-RUN npm i -g npm mocha
+RUN npm i -g npm mocha live-server
 
 USER root
 RUN sudo apt-get update
